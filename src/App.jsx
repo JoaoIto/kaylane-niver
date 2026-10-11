@@ -6,46 +6,40 @@ import { HappyHourSection } from "./components/HappyHourSection";
 import { MenuSection } from "./components/MenuSection";
 import { RsvpSection } from "./components/RsvpSection";
 import { Footer } from "./components/Footer";
-import { RibbonDivider } from "./components/RibbonDivider";
+import { WavyRibbon } from "./components/WavyRibbon";
 import { FloatingMobileBar } from "./components/FloatingMobileBar";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#2E1015] font-sans selection:bg-[#72091F] selection:text-[#FAF8F5] relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#FCFAF7] text-[#2E1015] font-sans selection:bg-[#5B0616] selection:text-[#FCFAF7] relative overflow-x-hidden">
       {/* Navigation Header */}
       <Header />
 
       {/* Main Content */}
       <main>
-        {/* A. Hero Section (O Convite com Laço de Veludo e Contagem Regressiva) */}
+        {/* A. Hero Section (Convite Limpo e Clássico) */}
         <HeroSection />
 
-        {/* Continuous Flowing Ribbon 1 */}
-        <RibbonDivider variant="standard" />
+        {/* Delicate Wavy Ribbon Divider */}
+        <WavyRibbon variant="bottom" />
 
-        {/* B. Seção do Local & Experiência (Zé Colméia Gastrobar) */}
+        {/* B. Seção do Local & Rota (Sem redundâncias) */}
         <VenueSection />
 
-        {/* Continuous Flowing Ribbon 2 */}
-        <RibbonDivider variant="flip" />
-
-        {/* C. Destaque Especial: Happy Hour & Bebidas (Chopp Dobradinha até às 20h) */}
+        {/* C. Card Especial do Chopp (Preços detalhados) */}
         <HappyHourSection />
 
-        {/* Continuous Flowing Ribbon 3 */}
-        <RibbonDivider variant="standard" />
+        {/* Delicate Wavy Ribbon Divider */}
+        <WavyRibbon variant="top" />
 
-        {/* D. Cardápio do Local (Menu Digital Interativo) */}
+        {/* D. Cardápio do Empório (Com mensagem de boas-vindas) */}
         <MenuSection />
 
-        {/* Continuous Flowing Ribbon 4 */}
-        <RibbonDivider variant="flip" />
-
-        {/* E. Confirmação de Presença (RSVP via WhatsApp) */}
+        {/* E. Formulário de Confirmação - RSVP (Apenas nome e bebida) */}
         <RsvpSection />
       </main>
 
-      {/* Footer */}
+      {/* F. Rodapé Afetivo (Inspirado na arte do Canva) */}
       <Footer />
 
       {/* Floating Bottom RSVP Bar for Mobile */}

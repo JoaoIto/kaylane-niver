@@ -1,8 +1,8 @@
 export const MENU_CATEGORIES = [
-  { id: "todos", name: "Todos os Pratos" },
-  { id: "sanduiches", name: "Sanduíches do Empório" },
-  { id: "saladas", name: "Saladas do Empório" },
-  { id: "compartilhar", name: "Pratos para Compartilhar" },
+  { id: "todos", name: "Todos" },
+  { id: "sanduiches", name: "Sanduíches" },
+  { id: "saladas", name: "Saladas" },
+  { id: "compartilhar", name: "Para Compartilhar" },
   { id: "individuais", name: "Pratos Individuais" },
 ];
 

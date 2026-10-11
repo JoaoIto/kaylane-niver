@@ -3,6 +3,7 @@
 @theme {
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-editorial: 'Playfair Display', Georgia, serif;
+  --font-cinzel: 'Cinzel', Georgia, serif;
   --font-script: 'Pinyon Script', cursive;
   --font-handwriting: 'Great Vibes', cursive;
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -10,24 +11,17 @@
   --color-wine-950: #2B030A;
   --color-wine-900: #420410;
   --color-wine-850: #500514;
-  --color-wine-800: #5C0617;
+  --color-wine-800: #5B0616;
   --color-wine-700: #72091F;
   --color-cherry-600: #8B0021;
   --color-cherry-500: #A81B34;
   --color-cherry-400: #C22340;
   --color-cherry-300: #E63956;
   
-  --color-ivory-50: #FFFFFF;
-  --color-ivory-100: #FDFBF9;
-  --color-ivory-200: #FAF6F2;
-  --color-ivory-300: #F4EBE3;
-  --color-ivory-400: #E8DCD1;
-
-  --color-gold-200: #FAF2E3;
-  --color-gold-300: #F3E8D2;
-  --color-gold-400: #E8D5B5;
+  --color-paper: #FCFAF7;
+  --color-paper-warm: #FAF7F2;
+  --color-rose-champagne: #EADFD7;
   --color-gold-500: #D4AF37;
-  --color-gold-600: #B89324;
 }
 
 @layer utilities {
@@ -39,6 +33,9 @@
   }
   .font-editorial {
     font-family: 'Playfair Display', Georgia, serif;
+  }
+  .font-cinzel {
+    font-family: 'Cinzel', Georgia, serif;
   }
   .font-serif-cormorant {
     font-family: 'Cormorant Garamond', Georgia, serif;
@@ -58,50 +55,28 @@
   }
 }
 
-/* Glassmorphism & Luxury Shadows */
-.glass-card {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(232, 213, 181, 0.45);
-  box-shadow: 0 16px 36px -12px rgba(92, 6, 23, 0.08), 0 2px 8px -2px rgba(92, 6, 23, 0.04);
+/* Minimalist Editorial Paper Card */
+.editorial-card {
+  background: #FFFFFF;
+  border: 1px solid #EADFD7;
+  box-shadow: 0 4px 20px -6px rgba(91, 6, 22, 0.04);
 }
 
-.glass-card-dark {
-  background: rgba(66, 4, 16, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 175, 55, 0.28);
-  box-shadow: 0 20px 45px -15px rgba(43, 3, 10, 0.5), 0 0 20px -4px rgba(212, 175, 55, 0.15);
+.editorial-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.editorial-card-hover:hover {
+  border-color: #5B0616;
+  box-shadow: 0 12px 30px -10px rgba(91, 6, 22, 0.08);
 }
 
-.gold-gradient-text {
-  background: linear-gradient(135deg, #FAF2E3 0%, #D4AF37 50%, #B89324 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.wine-gradient-text {
-  background: linear-gradient(135deg, #72091F 0%, #5C0617 40%, #420410 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.gold-border-glow {
-  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.4), 0 8px 24px -6px rgba(212, 175, 55, 0.25);
-}
-
-.wine-border-glow {
-  box-shadow: 0 0 0 1px rgba(114, 9, 31, 0.35), 0 12px 30px -8px rgba(92, 6, 23, 0.2);
-}
-
-/* Smooth Floating Animations */
+/* Floating Animations */
 @keyframes floatGentle {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-8px) rotate(2deg);
+    transform: translateY(-6px) rotate(1deg);
   }
 }
 
@@ -110,16 +85,7 @@
     transform: translateY(0px) scale(1);
   }
   50% {
-    transform: translateY(-6px) scale(1.02);
-  }
-}
-
-@keyframes ribbonShimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
+    transform: translateY(-4px) scale(1.02);
   }
 }
 
@@ -133,16 +99,15 @@
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAF6F2;
+  background: #FCFAF7;
 }
 ::-webkit-scrollbar-thumb {
-  background: #8B0021;
+  background: #EADFD7;
   border-radius: 9999px;
-  border: 2px solid #FAF6F2;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #5C0617;
+  background: #5B0616;
 }

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import { ArrowUp, Heart, Share2, Check, Calendar, Clock, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowUp, Share2, Check } from "lucide-react";
 import { EVENT_DATA } from "../data/eventData";
+import { CakeIllustration } from "./CakeIllustration";
+import { WavyRibbon } from "./WavyRibbon";
 
 export function Footer() {
   const [copiedLink, setCopiedLink] = useState(false);
@@ -13,9 +16,9 @@ export function Footer() {
     if (navigator.share) {
       navigator.share({
         title: "Aniversário de Kaylane Almeida",
-        text: "Te convido a celebrar comigo! 14 de Novembro às 17h30 no Zé Colméia Gastrobar.",
+        text: "Te convido a celebrar comigo! 14 de Novembro de 2026 às 17h30 no Zé Colméia Gastrobar.",
         url: window.location.href,
-      }).catch(() => {});
+      }).catch(() => { });
     } else {
       navigator.clipboard.writeText(window.location.href);
       setCopiedLink(true);
@@ -24,81 +27,76 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative bg-[#2B030A] text-[#FAF6F2] pt-16 pb-12 overflow-hidden border-t-2 border-[#D4AF37]/50">
-      {/* Background warm lighting */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-40 bg-[#8B0021]/30 blur-3xl pointer-events-none" />
+    <footer className="relative bg-[#FCFAF7] text-[#2E1015] pt-12 pb-8 overflow-hidden text-center">
+      <div className="max-w-xl mx-auto px-4 sm:px-6 relative z-10 space-y-5">
+        {/* ======================================================== */}
+        {/* AFFECTIVE CARD SECTION (REPRODUZINDO A ARTE DO CANVA)     */}
+        {/* ======================================================== */}
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-6">
-        {/* Monogram Brand Header */}
-        <div className="inline-flex items-center justify-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-[#5C0617] flex items-center justify-center border border-[#D4AF37]/60">
-            <span className="font-editorial text-sm font-bold text-[#FAF2E3]">K</span>
-          </div>
-          <span className="font-editorial text-2xl font-bold tracking-wider text-[#FAF2E3]">
-            {EVENT_DATA.celebrantName}
+        {/* 1. Main Cursive Phrase */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <span className="font-handwriting text-3xl sm:text-4xl md:text-5xl text-[#5B0616] block tracking-wide">
+            Obrigada pela sua presença!
           </span>
+        </motion.div>
+
+        {/* 2. Italic Serif Line */}
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="font-serif-cormorant text-base sm:text-lg italic text-[#5B0616] max-w-sm mx-auto"
+        >
+          Esse dia não seria tão especial sem você!
+        </motion.p>
+
+        {/* 3. Delicate Cake Illustration (as on the card) */}
+        <div className="py-2">
+          <CakeIllustration />
         </div>
 
-        {/* Romantic quote */}
-        <p className="font-handwriting text-2xl sm:text-3xl text-[#E8D5B5] max-w-lg mx-auto">
-          "Celebrar mais um ano ao lado de quem amamos torna a vida inesquecível."
-        </p>
-
-        {/* Quick event summary with Lucide icons */}
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm text-[#FAF2E3]/85 font-medium pt-2">
-          <span className="bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 flex items-center gap-1.5">
-            <Calendar className="w-3.5 h-3.5 text-[#D4AF37]" strokeWidth={1.5} />
-            <span>{EVENT_DATA.dateString}</span>
+        {/* 4. Affectionate Signature */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="space-y-0.5 pt-1"
+        >
+          <span className="text-xs font-serif-cormorant italic text-[#7D1225] block">
+            com carinho,
           </span>
-          <span className="bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 flex items-center gap-1.5">
-            <Clock className="w-3.5 h-3.5 text-[#D4AF37]" strokeWidth={1.5} />
-            <span>A partir das {EVENT_DATA.startTime}</span>
+          <span className="font-handwriting text-2xl sm:text-3xl text-[#5B0616] block">
+            Kaylane Almeida.
           </span>
-          <span className="bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 flex items-center gap-1.5">
-            <MapPin className="w-3.5 h-3.5 text-[#D4AF37]" strokeWidth={1.5} />
-            <span>{EVENT_DATA.venue.name}</span>
-          </span>
-        </div>
+        </motion.div>
 
-        {/* Share and Back to Top actions */}
-        <div className="flex items-center justify-center gap-4 pt-4">
-          <button
-            onClick={handleShare}
-            type="button"
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold text-[#FAF2E3] border border-[#D4AF37]/40 transition-colors"
-          >
-            {copiedLink ? (
-              <>
-                <Check className="w-3.5 h-3.5 text-emerald-400" strokeWidth={1.5} />
-                <span>Link Copiado!</span>
-              </>
-            ) : (
-              <>
-                <Share2 className="w-3.5 h-3.5 text-[#D4AF37]" strokeWidth={1.5} />
-                <span>Compartilhar Convite</span>
-              </>
-            )}
-          </button>
-
+        {/* Actions (Compartilhar e Voltar ao Topo) */}
+        <div className="flex items-center justify-center gap-3 pt-4">
           <button
             onClick={scrollToTop}
             type="button"
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold text-[#FAF2E3] border border-white/20 transition-colors"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-xs font-sans text-[#5B0616] border border-[#EADFD7] hover:border-[#5B0616] transition-colors shadow-xs"
           >
-            <ArrowUp className="w-3.5 h-3.5" strokeWidth={1.5} />
+            <ArrowUp className="w-3.5 h-3.5" strokeWidth={1.25} />
             <span>Voltar ao Topo</span>
           </button>
         </div>
 
-        {/* Copyright & Warm Note */}
-        <div className="pt-8 border-t border-white/10 text-[11px] text-[#FAF2E3]/50">
-          <p className="flex items-center justify-center gap-1.5">
-            <span>Celebração de Aniversário • Kaylane Almeida</span>
-            <Heart className="w-3 h-3 text-[#E63956] fill-[#E63956]" strokeWidth={1.5} />
-          </p>
-          <p className="mt-1">Palmas, Tocantins • 2025</p>
-        </div>
+        {/* Location & Year */}
+        <p className="text-[11px] text-[#7D1225]/60 font-light pt-2">
+          {EVENT_DATA.dateString} • {EVENT_DATA.venue.name} • Palmas, TO
+        </p>
       </div>
+
+      {/* Bottom Continuous Wavy Ribbon Line (Canva style) */}
+      <WavyRibbon variant="bottom" className="mt-4 sm:mt-6" />
     </footer>
   );
 }

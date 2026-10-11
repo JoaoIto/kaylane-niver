@@ -24,7 +24,7 @@ export function downloadIcsFile() {
   const icsContent = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Kaylane Almeida//Aniversario 2025//PT",
+    "PRODID:-//Kaylane Almeida//Aniversario 2026//PT",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     "BEGIN:VEVENT",
