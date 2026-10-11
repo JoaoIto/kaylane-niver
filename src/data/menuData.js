@@ -1,0 +1,117 @@
+export const MENU_CATEGORIES = [
+  { id: "todos", name: "Todos os Pratos" },
+  { id: "sanduiches", name: "Sanduíches do Empório" },
+  { id: "saladas", name: "Saladas do Empório" },
+  { id: "compartilhar", name: "Pratos para Compartilhar" },
+  { id: "individuais", name: "Pratos Individuais" },
+];
+
+export const MENU_ITEMS = [
+  // 1. Sanduíches do Empório
+  {
+    id: "sanduiche-1",
+    categoryId: "sanduiches",
+    categoryName: "Sanduíches do Empório",
+    name: "Bauru Brahma",
+    price: 19.99,
+    description: "Pão francês crocante recheado com rosbife artesanal, conserva especial de pimentão, ovo na chapa, queijo derretido e alface.",
+    serves: "Individual",
+    highlight: false,
+  },
+  {
+    id: "sanduiche-2",
+    categoryId: "sanduiches",
+    categoryName: "Sanduíches do Empório",
+    name: "Hambúrguer do Empório",
+    price: 42.99,
+    description: "Pão brioche selado, blend bovino de 150g, bacon crocante, maionese cremosa de queijo, cheddar, alface e tomate. Acompanha batatas da casa.",
+    serves: "Individual",
+    highlight: true,
+  },
+
+  // 2. Saladas do Empório
+  {
+    id: "salada-1",
+    categoryId: "saladas",
+    categoryName: "Saladas do Empório",
+    name: "Salada Caesar Tradicional",
+    price: 66.99,
+    description: "Mix de folhas, frango grelhado em tiras, crótons artesanais, lascas de parmesão e molho especial da casa.",
+    serves: "1 a 2 pessoas",
+    highlight: false,
+  },
+  {
+    id: "salada-2",
+    categoryId: "saladas",
+    categoryName: "Saladas do Empório",
+    name: "Salada Empório",
+    price: 64.99,
+    description: "Mix de folhas selecionadas, tomate confit, muçarela de búfala fresca, palmito picado e cenoura ralada.",
+    serves: "1 a 2 pessoas",
+    highlight: false,
+  },
+
+  // 3. Pratos para Compartilhar
+  {
+    id: "compartilhar-1",
+    categoryId: "compartilhar",
+    categoryName: "Pratos para Compartilhar",
+    name: "Frigideira de Frutos do Mar",
+    price: 189.99,
+    description: "Mix nobre de frutos do mar e peixe grelhados no azeite, alho e cebola. Acompanha arroz branco e farofa crocante.",
+    serves: "2 a 3 pessoas",
+    highlight: true,
+  },
+  {
+    id: "compartilhar-2",
+    categoryId: "compartilhar",
+    categoryName: "Pratos para Compartilhar",
+    name: "Moqueca de Peixe",
+    price: 179.99,
+    description: "Peixe fresco cozido em leite de coco e azeite de dendê com tomate e pimentões. Acompanha pirão, farofa e arroz.",
+    serves: "2 a 3 pessoas",
+    highlight: true,
+  },
+
+  // 4. Pratos Individuais
+  {
+    id: "individual-1",
+    categoryId: "individuais",
+    categoryName: "Pratos Individuais",
+    name: "Parmegiana Grill",
+    price: 89.99,
+    description: "Filé mignon à milanesa coberto com molho de tomate caseiro, queijo parmesão e leve toque de gorgonzola. Acompanha arroz e fritas.",
+    serves: "Individual",
+    highlight: true,
+  },
+  {
+    id: "individual-2",
+    categoryId: "individuais",
+    categoryName: "Pratos Individuais",
+    name: "Picanha do Brahma",
+    price: 85.99,
+    description: "Corte nobre de picanha grelhada com arroz cremoso, batatas rústicas e farofa da casa.",
+    serves: "Individual",
+    highlight: true,
+  },
+  {
+    id: "individual-3",
+    categoryId: "individuais",
+    categoryName: "Pratos Individuais",
+    name: "Arroz de Fraldinha",
+    price: 82.99,
+    description: "Arroz caldoso com fraldinha desfiada cozida lentamente, finalizado com folhas frescas de agrião.",
+    serves: "Individual",
+    highlight: false,
+  },
+  {
+    id: "individual-4",
+    categoryId: "individuais",
+    categoryName: "Pratos Individuais",
+    name: "Arroz de Polvo com Legumes",
+    price: 98.99,
+    description: "Arroz salteado com tentáculos de polvo e legumes selecionados no azeite com toque cítrico.",
+    serves: "Individual",
+    highlight: true,
+  },
+];
